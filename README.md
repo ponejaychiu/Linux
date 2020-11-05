@@ -18,4 +18,5 @@
 ```cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c```
 
 # 二、Linux系统基础配置类；
+
 # 三、
