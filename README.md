@@ -24,10 +24,12 @@
 ```netstat -an |grep 端口号```
 ### 查看端口被哪个程序占用：
 ```netstat -apn |grep 端口号```
+
 ```lsof -i:端口号```
 
 # 二、Linux系统基础配置类；
-## 1、静态IP设置：
+## 1、IP设置
+### 静态IP设置：
 ```
 ONBOOT=YES       #开机自启动
 BOOTPROTO=STATIC  #设置静态IP
@@ -37,6 +39,17 @@ GATEWAY=*.*.*.*    #网关
 DNS=*.*.*.*        #DNS
 DEVICE=eth0        #网卡名称
 ```
+
+### 动态IP设置：
+```
+DEVICE=eth1
+BOOTPROTO=dhcp   #动态获取IP
+HWADDR=00:15:17:B2:DC:B7
+ONBOOT=yes
+```
+### 运行命令获取动态IP地址
+```dhclient  eth1```
+
 ## 2、ifconfig网卡信息不一致：
 ### 如果出现ifconfig显示的eth实际系统中不存在此eth时,先新建eth编辑后再删除下面的文件:
 ```rm -rf /etc/udev/rules.d/70-persistent-net.rules```
