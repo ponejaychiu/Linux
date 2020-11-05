@@ -18,5 +18,12 @@
 ```cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c```
 
 # 二、Linux系统基础配置类；
-
+静态IP设置：
+ONBOOT=YES       #开机自启动
+BOOTPROTO=STATIC  #设置静态IP
+IPADDR=*.*.*.*      #ip地址
+NETMASK=*.*.*.*    #子网掩码
+GATEWAY=*.*.*.*    #网关
+DNS=*.*.*.*        #DNS
+DEVICE=eth0        #网卡名称
 # 三、
